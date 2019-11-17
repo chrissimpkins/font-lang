@@ -8,6 +8,11 @@
 import AppKit
 import CoreText
 
+// Application data
+
+let VERSION = "0.1.0"
+let EXECUTABLE = "font-lang"
+
 // Standard stream functions
 
 func stdout(message: String) {
@@ -28,18 +33,30 @@ func loadFont(filePath: String, fontSize: CGFloat) -> CTFont {
     return CTFontCreateWithFontDescriptor(fd[0], fontSize, nil)
 }
 
+// Utilities
+
+func fileExists(filePath: String) -> Bool {
+    let manager = FileManager.default
+    return manager.fileExists(atPath: filePath)
+}
+
 
 // Main application logic
 let argv = CommandLine.arguments
 
+// Validation : missing arguments
 if argv.count < 2 {
-    // Expecting a string but didn't receive it
     stderr(message: "[ERROR] Please enter one or more font paths\n")
     exit(EXIT_FAILURE)
 }
-else {
-    for arg in argv[1...] {
-        print("\(arg)")
+
+// TODO: add help, usage, version support
+
+// Validation: file paths exist
+for arg in argv[1...] {
+    if !fileExists(filePath: arg) {
+        stderr(message: "[ERROR] The file '\(arg)' does not exist.")
+        exit(EXIT_FAILURE)
     }
 }
 
