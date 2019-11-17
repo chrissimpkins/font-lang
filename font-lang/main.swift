@@ -60,6 +60,22 @@ for arg in argv[1...] {
     }
 }
 
+// Print language support in font files
+for arg in argv[1...] {
+    let ct_font = loadFont(filePath: arg, fontSize: 12.0)
+
+    // cast CFArray to Swift array
+    let lang_array = CTFontCopySupportedLanguages(ct_font)
+        as! [String]
+    
+    print("\n\(CTFontCopyFullName(ct_font))")
+
+    for lang in lang_array {
+        let lang_string = langDict[lang] ?? lang
+        print("\(lang_string)")
+    }
+}
+
 
 
 
