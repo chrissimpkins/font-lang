@@ -2,9 +2,15 @@
 //  langs.swift
 //  font-lang
 //
-//  Created by Christopher Simpkins on 11/16/19.
-//  Copyright © 2019 Source Foundry. Apache License v2.0
+// The source in this file is based on work published by W3C at https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+// These data are released and used under the following W3C license:
+// Copyright © 2019 World Wide Web Consortium, (Massachusetts Institute of Technology, European Research Consortium for Informatics and Mathematics, Keio University, Beihang). All Rights Reserved. This work is distributed under the W3C® Software License [1] in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 //
+// [1] http://www.w3.org/Consortium/Legal/copyright-software
+//
+// The derivative work to format the W3C data in Swift source format as published in this file is released under the following license:
+// Copyright 2019 Source Foundry Authors. Apache License, v2.0
+
 
 // Key = language code
 // Value = language name
