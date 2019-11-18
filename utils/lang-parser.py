@@ -17,6 +17,11 @@ Please refer to the source below for the data filters that are used during
 parsing of the IANA data file.
 """
 
+# =====================================
+# Copyright 2019 Source Foundry Authors
+# Apache License, v2.0
+# =====================================
+
 import os
 import re
 import sys
