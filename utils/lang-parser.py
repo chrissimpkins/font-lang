@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module parsers the text file at
+This module parses the text file at
 
  https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
 
@@ -44,6 +44,7 @@ def main(argv):
     script_list = []
     region_list = []
     active_lang_list = []
+    specification_date_string = ""
     lang_subtag_dict = {}
 
     # first pass to filters
@@ -71,6 +72,7 @@ def main(argv):
             # print that and do not include in list of lang subtags
             elif "File-Date:" in lang:
                 print(f"{lang}")
+                specification_date_string = lang.strip()
             else:
                 active_lang_list.append(lang)
 
@@ -98,7 +100,8 @@ def main(argv):
             lang_subtag_dict[subtag] = language_description
 
     # compose Swift source from the parsed data
-    swift_lang_dict = "let langDict = [\n"
+    swift_lang_dict = f"// {specification_date_string}\n"
+    swift_lang_dict += "let langDict = [\n"
     sorted_lang_keys = sorted(lang_subtag_dict)
 
     for k in sorted_lang_keys:
