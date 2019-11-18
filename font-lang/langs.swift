@@ -17,6 +17,7 @@
 // IANA Reference: https://www.w3.org/International/articles/language-tags/
 // IANA Language Registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
 
+// File-Date: 2019-09-16
 let langDict = [
     "1606nict": "Late Middle French (to 1606)",
     "1694acad": "Early Modern French",
