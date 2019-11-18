@@ -46,7 +46,7 @@ def main(argv):
     active_lang_list = []
     lang_subtag_dict = {}
 
-    # first pass to filter deprecated lang subtags
+    # first pass to filters
     with open(raw_lang_filepath, "r") as f:
         raw_text = f.read()
         raw_lang_list = raw_text.split("%%\n")
